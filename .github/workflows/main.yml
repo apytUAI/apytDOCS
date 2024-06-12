@@ -8,18 +8,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
     - name: Install Rust
-      run: sudo apt update && sudo apt install rustc cargo -y
+      run: sudo apt update && sudo apt install rustc cargo
 
     - name: Install mdBook
       run: cargo install mdbook
