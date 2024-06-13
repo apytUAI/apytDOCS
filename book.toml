@@ -9,3 +9,4 @@ build-dir = "book"
 
 [output.html]
 default-theme = "light"
+mathjax-support = true
